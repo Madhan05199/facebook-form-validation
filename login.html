@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook</title>
+ <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="CSS/style-2.css">
+<link rel="stylesheet" href="CSS/responsive.css">
+</head>	
+<body>	
+<section>
+	<div class="main_container">	
+		<div class="image-container">
+			<img src="	https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="facebook">
+			<p>Facebook helps you connect and share with the people in your life.</p>
+		</div>
+		<div class="signup-container">		
+			<div class="card-section">
+				<form id="form">
+					<input type="type" value="" id="mail" placeholder="Email address or phone number">
+					<input type="password" value="" id="pwd" placeholder="Password">
+					<button id="btn" type="submit">Log in</button>
+				</form>
+				<a href="#" class="forgot">Forgotten password?</a>
+				<div class="line">
+				</div>
+				<a href="signup.html" class="create">Create new account</a>
+			</div>
+			<p><small><b>Create a Page</b> for a celebrity,brand or business</small></p>
+		</div> 
+	</div>
+</section>	
+<script>
+	//get item
+	let mail=localStorage.getItem("mail")
+	console.log(mail)
+	let password=localStorage.getItem("pwd")
+	console.log(password);
+
+	let form=document.getElementById("form");
+	let loginmail=document.getElementById("mail");
+	let loginpass=document.getElementById("pwd");
+	
+	//login to main page
+	form.addEventListener("submit",function(form){
+		form.preventDefault();
+		if(mail===loginmail.value && password===loginpass.value){
+
+			location.href="index.html"
+		}else{
+			alert("Invalid mail or password")
+		}
+
+	})
+</script>
+</body>	
+</html>
